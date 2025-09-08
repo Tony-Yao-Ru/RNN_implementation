@@ -27,8 +27,11 @@ TEXT = (
 
 # ---------------- Helpers ----------------
 def build_vocab(text):
+    # 1. Collect all unique characters from the text
     vocab = sorted(set(text))
+    # 2. Create mapping: char → index
     stoi = {c: i for i, c in enumerate(vocab)}
+    # 3. Create mapping: index → char
     itos = {i: c for c, i in stoi.items()}
     return vocab, stoi, itos
 
